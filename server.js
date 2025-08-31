@@ -13,7 +13,7 @@ app.post("/webhooks/wa", (req, res) => {
   console.log("WA webhook payload:", req.body);
   res.sendStatus(200);
 });
-// WhatsApp webhook verification (GET)
+
 app.get("/webhooks/wa", (req, res) => {
   const VERIFY_TOKEN = process.env.VERIFY_TOKEN || "CHANGE_ME";
   const mode = req.query["hub.mode"];
@@ -27,4 +27,5 @@ app.get("/webhooks/wa", (req, res) => {
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`whabid-api listening on ${PORT}`));
+
 
